@@ -1,0 +1,35 @@
+NAME: Keyu Ji
+EMAIL: g.jikeyu@gmail.com
+ID: 704966744
+
+This distribution includes the source file, Makefile, a shell script used by Makefile for command "make check", this README.
+
+Now the program supports the following 5 options:
+	
+	--rdonly f: O_RDONLY. Open the file f for reading only.
+
+	--wronly: O_WRONLY. Open the file f for writing only.
+
+	--command i o e cmd args: Execute a command with standard input i, standard output o and standard error e; these values should correspond to earlier file or pipe options. The executable for the command is cmd and it has zero or more arguments args. None of the cmd and args operands begin with the two characters "--".
+
+	--verbose: Just before executing an option, output a line to standard output containing the option. If the option has operands, list them separated by spaces. Ensure that the line is actually output, and is not merely sitting in a buffer somewhere.
+
+Besides "make", Makefile also supports "make check", "make clean", "make dist".
+
+	"make": build the program
+
+	"make check": the shell script tests the basic functionality of this program, and reports whether each test succeeds or not. 
+
+	"make clean": remove all files created by Makefile
+
+	"make dist": create the tarball distribution
+
+There has not been any known limitation of this program. The number of files able to open depends on the memory space of the system.
+
+Parsing multiple arguments reference:
+https://stackoverflow.com/questions/15466782/parsing-command-line-options-with-multiple-arguments-getopt/15467257
+https://en.cppreference.com/w/c/experimental/dynamic/strdup
+
+fork() reference:
+https://www.geeksforgeeks.org/c-program-demonstrate-fork-and-pipe/
+https://stackoverflow.com/questions/876605/multiple-child-process
